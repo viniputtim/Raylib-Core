@@ -12,6 +12,8 @@ class Rect
         Rect(float x, float y, float w, float h) : left(x), top(y), width(w), height(h) {};
         ~Rect() {};
 
+        void set(float x, float y, float w, float h);
+
         float get_width();
         float get_height();
         Vector2 get_size();

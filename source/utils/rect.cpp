@@ -1,6 +1,17 @@
 # include "utils/rect.hpp"
 
 
+// Setter
+
+void Rect::set(float x, float y, float w, float h)
+{
+    this->left = x;
+    this->top = y;
+    this->width = w;
+    this->height = h;
+}
+
+
 // Size getters
 
 
@@ -215,7 +226,7 @@ void Rect::set_midleft(Vector2 midleft)
 void Rect::set_center(Vector2 center)
 {
     this->left = center.x - this->width / 2;
-    this->top = center.x - this->height / 2;
+    this->top = center.y - this->height / 2;
 }
 
 

@@ -5,6 +5,7 @@
 # include <raylib.h>
 # include "main_loop.hpp"
 # include "scenes/scene.hpp"
+# include "utils/surface.hpp"
 
 
 class Loading : public Scene
@@ -17,8 +18,8 @@ class Loading : public Scene
         void draw() override;
 
     private:
-        Texture2D raylib_logo;
-        bool lights_on = true;
+        Surface raylib_logo = "../resources/graphics/raylib_logo.png";
+        Rect screen_rect = {0, 0, GetScreenWidth(), GetScreenHeight()};
 };
 
 
