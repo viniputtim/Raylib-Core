@@ -4,7 +4,7 @@
 Loading::Loading(MainLoop * program) : Scene(program)
 {
     this->raylib_logo.get_rect()->set_center(this->screen_rect.get_center());
-    this->program->set_timeout(10, [this] () {this->program->set_scene("main menu");});
+    this->program->set_timeout(5, [this] () {this->program->set_scene("main menu");});
 }
 
 

@@ -17,10 +17,10 @@ class Surface
         void draw();
 
     private:
-        Color color = WHITE;
         Image image;
         Texture2D texture;
         Rect rect;
+        Color color = WHITE;
 };
 
 

@@ -1,7 +1,27 @@
 # include "utils/rect.hpp"
 
 
+// Operations
+
+
+Rect Rect::move(Vector2 delta)
+{
+    float new_left = this->left + delta.x;
+    float new_top = this->top + delta.y;
+
+    return Rect(new_left, new_top, this->width, this->height);
+}
+
+
+void Rect::move_ip(Vector2 delta)
+{
+    this->left += delta.x;
+    this->top += delta.y;
+}
+
+
 // Setter
+
 
 void Rect::set(float x, float y, float w, float h)
 {
@@ -9,6 +29,15 @@ void Rect::set(float x, float y, float w, float h)
     this->top = y;
     this->width = w;
     this->height = h;
+}
+
+
+// getter
+
+
+Rectangle Rect::get_rectangle()
+{
+    return Rectangle({this->left, this->top, this->width, this->height});
 }
 
 

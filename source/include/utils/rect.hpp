@@ -9,10 +9,15 @@ class Rect
 {
     public:
         Rect() {};
-        Rect(float x, float y, float w, float h) : left(x), top(y), width(w), height(h) {};
+        template<typename A, typename B, typename C, typename D>
+        Rect(A x, B y, C w, D h) : left(x), top(y), width(w), height(h) {};
         ~Rect() {};
 
+        Rect move(Vector2 delta);
+        void move_ip(Vector2 delta);
+
         void set(float x, float y, float w, float h);
+        Rectangle get_rectangle();
 
         float get_width();
         float get_height();

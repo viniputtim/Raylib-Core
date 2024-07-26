@@ -80,3 +80,9 @@ void MainLoop::set_scene(std::string scene_name)
 {
     this->scenes[scene_name]();
 }
+
+
+Rect * MainLoop::get_screen_rect()
+{
+    return &this->screen_rect;
+}

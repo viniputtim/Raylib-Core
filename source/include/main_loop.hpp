@@ -25,6 +25,7 @@ class MainLoop
         void update();
         void draw();
         void set_scene(std::string scene_name);
+        Rect * get_screen_rect();
 
         template<typename F, typename ...Args>
         std::shared_ptr<ScheduledEvent> set_timeout(float seconds, F function, Args ...args)
@@ -56,6 +57,7 @@ class MainLoop
         std::unique_ptr<Scene> current_scene;
         std::map<std::string, std::function<void()>> scenes;
         std::vector<std::shared_ptr<ScheduledEvent>> scheduled_events;
+        Rect screen_rect = {0, 0, GetScreenWidth(), GetScreenHeight()};
 };
 
 
