@@ -16,7 +16,7 @@ class Rect
         Rect move(Vector2 delta);
         void move_ip(Vector2 delta);
 
-        void set(float x, float y, float w, float h);
+        void update(float x, float y, float w, float h);
         Rectangle get_rectangle();
 
         float get_width();
@@ -56,10 +56,10 @@ class Rect
         void set_bottomright(Vector2 bottomright);
 
     private:
-        float width = 0;
-        float height = 0;
-        float left = 0;
-        float top = 0;
+        float width {0};
+        float height {0};
+        float left {0};
+        float top {0};
 };
 
 

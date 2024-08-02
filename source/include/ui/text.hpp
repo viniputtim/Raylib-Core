@@ -3,6 +3,7 @@
 
 
 # include <raylib.h>
+# include <memory>
 # include <string>
 # include "utils/rect.hpp"
 
@@ -12,12 +13,12 @@ class Text
     public:
         Text() {};
         Text(
-            std::string text, Font font, int size, Color color, int spacing, Color shadow_color,
-            Vector2 shadow_pos
+            std::string text, Font font, int size, Color color, int spacing,
+            Color shadow_color, Vector2 shadow_pos
         );
         ~Text() {};
 
-        Rect * get_rect();
+        std::shared_ptr<Rect> get_rect();
         void draw();
 
     private:
@@ -26,11 +27,9 @@ class Text
         int size;
         Color color;
         int spacing;
-        Rect rect;
+        std::shared_ptr<Rect> rect;
         Color shadow_color;
         Vector2 shadow_pos;
-
-        void calculate_rect();
 };
 
 

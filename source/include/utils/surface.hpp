@@ -3,6 +3,7 @@
 
 
 # include <raylib.h>
+# include <memory>
 # include "utils/rect.hpp"
 
 
@@ -13,14 +14,14 @@ class Surface
         Surface(const char * image_path);
         ~Surface();
 
-        Rect * get_rect();
+        std::shared_ptr<Rect> get_rect();
         void draw();
 
     private:
         Image image;
         Texture2D texture;
-        Rect rect;
-        Color color = WHITE;
+        std::shared_ptr<Rect> rect;
+        Color color {WHITE};
 };
 
 

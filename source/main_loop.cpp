@@ -4,7 +4,9 @@
 MainLoop::MainLoop()
 {
     this->scenes["loading"] = [this] () {this->current_scene = std::make_unique<Loading> (this);};
-    this->scenes["main menu"] = [this] () {this->current_scene = std::make_unique<MainMenu> (this);};
+    this->scenes["main menu"] = [this] () {
+        this->current_scene = std::make_unique<MainMenu> (this);
+    };
     this->set_scene("loading");
 }
 
@@ -50,8 +52,10 @@ void MainLoop::check_events()
     {
         this->show_fps = !this->show_fps;
     }
-
-    this->current_scene->check_events();
+    else
+    {
+        this->current_scene->check_events();
+    }
 }
 
 
@@ -82,7 +86,7 @@ void MainLoop::set_scene(std::string scene_name)
 }
 
 
-Rect * MainLoop::get_screen_rect()
+std::shared_ptr<Rect> MainLoop::get_screen_rect()
 {
-    return &this->screen_rect;
+    return this->screen_rect;
 }

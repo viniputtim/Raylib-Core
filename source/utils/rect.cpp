@@ -6,8 +6,8 @@
 
 Rect Rect::move(Vector2 delta)
 {
-    float new_left = this->left + delta.x;
-    float new_top = this->top + delta.y;
+    float new_left {this->left + delta.x};
+    float new_top {this->top + delta.y};
 
     return Rect(new_left, new_top, this->width, this->height);
 }
@@ -23,7 +23,7 @@ void Rect::move_ip(Vector2 delta)
 // Setter
 
 
-void Rect::set(float x, float y, float w, float h)
+void Rect::update(float x, float y, float w, float h)
 {
     this->left = x;
     this->top = y;
